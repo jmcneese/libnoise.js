@@ -1,17 +1,17 @@
 var MathConsts = require('../mathconsts');
 var Sphere = function(module) {
 
-	if(!module) {
-
-		throw new Error('Invalid or missing module!');
-
-	}
-
-	this.module = module;
+	this.module = module || null;
 
 };
 
 Sphere.prototype.getValue = function(lat, lon) {
+
+	if(!this.module) {
+
+		throw new Error('Invalid or missing module!');
+
+	}
 
 	var r = Math.cos(MathConsts.DEG_TO_RAD * lat);
 

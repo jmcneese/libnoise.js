@@ -1,16 +1,16 @@
 var Plane = function(module) {
 
-	if(!module) {
-
-		throw new Error('Invalid or missing module!');
-
-	}
-
-	this.module = module;
+	this.module = module || null;
 
 };
 
 Plane.prototype.getValue = function(x, y) {
+
+	if(!this.module) {
+
+		throw new Error('Invalid or missing module!');
+
+	}
 
 	return this.module.getValue(x, 0, y);
 

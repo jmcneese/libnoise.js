@@ -1,12 +1,6 @@
 var Perlin = require('../generator/perlin');
-
 var Turbulence = function(sourceModule) {
 
-	this.sourceModule   = sourceModule || null;
-	this.frequency      = Turbulence.DEFAULT_TURBULENCE_FREQUENCY;
-	this.power          = Turbulence.DEFAULT_TURBULENCE_POWER;
-	this.roughness      = Turbulence.DEFAULT_TURBULENCE_ROUGHNESS;
-	this.seed           = Turbulence.DEFAULT_TURBULENCE_SEED;
 	this.xDistortModule = new Perlin();
 	this.yDistortModule = new Perlin();
 	this.zDistortModule = new Perlin();
@@ -52,6 +46,12 @@ var Turbulence = function(sourceModule) {
 		this.zDistortModule.seed = v+2;
 
 	});
+
+	this.sourceModule   = sourceModule || null;
+	this.frequency      = Turbulence.DEFAULT_TURBULENCE_FREQUENCY;
+	this.power          = Turbulence.DEFAULT_TURBULENCE_POWER;
+	this.roughness      = Turbulence.DEFAULT_TURBULENCE_ROUGHNESS;
+	this.seed           = Turbulence.DEFAULT_TURBULENCE_SEED;
 
 };
 

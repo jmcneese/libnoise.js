@@ -1,5 +1,5 @@
 var NoiseGen = require('../../noisegen');
-
+var MathFuncs = require('../../mathfuncs');
 var Billow = function(f, l, o, p, s, q) {
 
 	this.frequency  = f || Billow.DEFAULT_BILLOW_FREQUENCY;
@@ -34,9 +34,9 @@ Billow.prototype.getValue = function(x, y, z) {
 
 		// Make sure that these floating-point values have the same range as a 32-
 		// bit integer so that we can pass them to the coherent-noise functions.
-		nx       = NoiseGen.makeInt32Range(x);
-		ny       = NoiseGen.makeInt32Range(y);
-		nz       = NoiseGen.makeInt32Range(z);
+		nx       = MathFuncs.makeInt32Range(x);
+		ny       = MathFuncs.makeInt32Range(y);
+		nz       = MathFuncs.makeInt32Range(z);
 
 		// Get the coherent-noise value from the input value and add it to the final result.
 		signal   = 2.0 * Math.abs(NoiseGen.gradientCoherentNoise3D(nx, ny, nz, ((this.seed + octave) & 0xffffffff), this.quality)) - 1.0;
@@ -50,9 +50,7 @@ Billow.prototype.getValue = function(x, y, z) {
 
 	}
 
-	value += 0.5;
-
-	return value;
+	return value + 0.5;
 
 };
 

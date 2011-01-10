@@ -1,5 +1,5 @@
 var NoiseGen = require('../../noisegen');
-
+var MathFuncs = require('../../mathfuncs');
 var Perlin = function(f, l, o, p, s, q) {
 
 	this.frequency  = f || Perlin.DEFAULT_PERLIN_FREQUENCY;
@@ -34,9 +34,9 @@ Perlin.prototype.getValue = function(x, y, z) {
 
 		// Make sure that these floating-point values have the same range as a 32-
 		// bit integer so that we can pass them to the coherent-noise functions.
-		nx       = NoiseGen.makeInt32Range(x);
-		ny       = NoiseGen.makeInt32Range(y);
-		nz       = NoiseGen.makeInt32Range(z);
+		nx       = MathFuncs.makeInt32Range(x);
+		ny       = MathFuncs.makeInt32Range(y);
+		nz       = MathFuncs.makeInt32Range(z);
 
 		// Get the coherent-noise value from the input value and add it to the final result.
 		signal   = NoiseGen.gradientCoherentNoise3D(nx, ny, nz, ((this.seed + octave) & 0xffffffff), this.quality);

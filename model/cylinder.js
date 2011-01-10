@@ -2,17 +2,17 @@ var MathConsts = require('../mathconsts');
 
 var Cylinder = function(module) {
 
-	if(!module) {
-
-		throw new Error('Invalid or missing module!');
-
-	}
-
-	this.module = module;
+	this.module = module || null;
 
 };
 
 Cylinder.prototype.getValue = function(angle, y) {
+
+	if(!this.module) {
+
+		throw new Error('Invalid or missing module!');
+
+	}
 
 	var i = parseFloat(angle) * MathConsts.DEG_TO_RAD;
 

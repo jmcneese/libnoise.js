@@ -1,6 +1,5 @@
 var Misc = require('../../misc');
 var Interpolation = require('../../interpolation');
-
 var Terrace = function(sourceModule, controlPoints, invert) {
 
 	this.sourceModule   = sourceModule  || null;

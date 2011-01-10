@@ -23,7 +23,11 @@ TranslatePoint.prototype.getValue = function(x, y, z) {
 
 	}
 
-	return this.sourceModule.getValue(x + this.translateX, y + this.translateY, z + this.translateZ);
+	return this.sourceModule.getValue(
+		x + this.translateX,
+		y + this.translateY,
+		z + this.translateZ
+	);
 
 };
 

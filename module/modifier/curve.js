@@ -1,6 +1,5 @@
 var Misc = require('../../misc');
 var Interpolation = require('../../interpolation');
-
 var Curve = function(sourceModule, controlPoints) {
 
 	this.sourceModule   = sourceModule || null;
