@@ -1,6 +1,6 @@
-var Cylinders = function(f) {
+var Cylinders = function(frequency) {
 
-	this.frequency = f || Cylinders.DEFAULT_CYLINDERS_FREQUENCY;
+	this.frequency = frequency || Cylinders.DEFAULT_CYLINDERS_FREQUENCY;
 
 };
 

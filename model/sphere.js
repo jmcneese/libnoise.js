@@ -1,13 +1,13 @@
 var MathConsts = require('../mathconsts');
-var Sphere = function(module) {
+var Sphere = function(sourceModule) {
 
-	this.module = module || null;
+	this.sourceModule = sourceModule || null;
 
 };
 
 Sphere.prototype.getValue = function(lat, lon) {
 
-	if(!this.module) {
+	if(!this.sourceModule) {
 
 		throw new Error('Invalid or missing module!');
 
@@ -15,7 +15,7 @@ Sphere.prototype.getValue = function(lat, lon) {
 
 	var r = Math.cos(MathConsts.DEG_TO_RAD * lat);
 
-	return this.module.getValue(
+	return this.sourceModule.getValue(
 		Math.cos(MathConsts.DEG_TO_RAD * lon) * r,
 		Math.sin(MathConsts.DEG_TO_RAD * lat),
 		Math.sin(MathConsts.DEG_TO_RAD * lon) * r

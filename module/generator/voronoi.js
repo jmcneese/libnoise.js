@@ -1,12 +1,12 @@
 var MathConsts = require('../../mathconsts');
 var NoiseGen = require('../../noisegen');
 
-var Voronoi = function(f, disp, dist, s) {
+var Voronoi = function(frequency, displacement, distance, seed) {
 
-	this.frequency      = f     || Voronoi.DEFAULT_VORONOI_FREQUENCY;
-	this.displacement   = disp  || Voronoi.DEFAULT_VORONOI_DISPLACEMENT;
-	this.distance       = dist  || false;
-	this.seed           = s     || Voronoi.DEFAULT_VORONOI_SEED;
+	this.frequency      = frequency     || Voronoi.DEFAULT_VORONOI_FREQUENCY;
+	this.displacement   = displacement  || Voronoi.DEFAULT_VORONOI_DISPLACEMENT;
+	this.distance       = distance      || false;
+	this.seed           = seed          || Voronoi.DEFAULT_VORONOI_SEED;
 
 };
 

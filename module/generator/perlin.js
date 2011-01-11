@@ -1,23 +1,23 @@
 var NoiseGen = require('../../noisegen');
 var MathFuncs = require('../../mathfuncs');
-var Perlin = function(f, l, o, p, s, q) {
+var Perlin = function(frequency, lacunarity, octaves, persist, seed, quality) {
 
-	this.frequency  = f || Perlin.DEFAULT_PERLIN_FREQUENCY;
-	this.lacunarity = l || Perlin.DEFAULT_PERLIN_LACUNARITY;
-	this.octaves    = o || Perlin.DEFAULT_PERLIN_OCTAVE_COUNT;
-	this.persist    = p || Perlin.DEFAULT_PERLIN_PERSISTENCE;
-	this.seed       = s || Perlin.DEFAULT_PERLIN_SEED;
-	this.quality    = q || NoiseGen.QUALITY_STD;
+	this.frequency  = frequency     || Perlin.DEFAULT_PERLIN_FREQUENCY;
+	this.lacunarity = lacunarity    || Perlin.DEFAULT_PERLIN_LACUNARITY;
+	this.octaves    = octaves       || Perlin.DEFAULT_PERLIN_OCTAVE_COUNT;
+	this.persist    = persist       || Perlin.DEFAULT_PERLIN_PERSISTENCE;
+	this.seed       = seed          || Perlin.DEFAULT_PERLIN_SEED;
+	this.quality    = quality       || NoiseGen.QUALITY_STD;
 
 };
 
-Perlin.DEFAULT_PERLIN_FREQUENCY = 1.0;
-Perlin.DEFAULT_PERLIN_LACUNARITY = 2.0;
-Perlin.DEFAULT_PERLIN_QUALITY = NoiseGen.QUALITY_STD;
-Perlin.DEFAULT_PERLIN_OCTAVE_COUNT = 6;
-Perlin.DEFAULT_PERLIN_PERSISTENCE = 0.5;
-Perlin.DEFAULT_PERLIN_SEED = 0;
-Perlin.PERLIN_MAX_OCTAVE = 30;
+Perlin.DEFAULT_PERLIN_FREQUENCY     = 1.0;
+Perlin.DEFAULT_PERLIN_LACUNARITY    = 2.0;
+Perlin.DEFAULT_PERLIN_QUALITY       = NoiseGen.QUALITY_STD;
+Perlin.DEFAULT_PERLIN_OCTAVE_COUNT  = 6;
+Perlin.DEFAULT_PERLIN_PERSISTENCE   = 0.5;
+Perlin.DEFAULT_PERLIN_SEED          = 0;
+Perlin.PERLIN_MAX_OCTAVE            = 30;
 
 Perlin.prototype.getValue = function(x, y, z) {
 

@@ -1,23 +1,23 @@
 var NoiseGen = require('../../noisegen');
 var MathFuncs = require('../../mathfuncs');
-var Billow = function(f, l, o, p, s, q) {
+var Billow = function(frequency, lacunarity, octaves, persist, seed, quality) {
 
-	this.frequency  = f || Billow.DEFAULT_BILLOW_FREQUENCY;
-	this.lacunarity = l || Billow.DEFAULT_BILLOW_LACUNARITY;
-	this.octaves    = o || Billow.DEFAULT_BILLOW_OCTAVE_COUNT;
-	this.persist    = p || Billow.DEFAULT_BILLOW_PERSISTENCE;
-	this.seed       = s || Billow.DEFAULT_BILLOW_SEED;
-	this.quality    = q || NoiseGen.QUALITY_STD;
+	this.frequency  = frequency     || Billow.DEFAULT_BILLOW_FREQUENCY;
+	this.lacunarity = lacunarity    || Billow.DEFAULT_BILLOW_LACUNARITY;
+	this.octaves    = octaves       || Billow.DEFAULT_BILLOW_OCTAVE_COUNT;
+	this.persist    = persist       || Billow.DEFAULT_BILLOW_PERSISTENCE;
+	this.seed       = seed          || Billow.DEFAULT_BILLOW_SEED;
+	this.quality    = quality       || NoiseGen.QUALITY_STD;
 
 };
 
-Billow.DEFAULT_BILLOW_FREQUENCY = 1.0;
-Billow.DEFAULT_BILLOW_LACUNARITY = 2.0;
-Billow.DEFAULT_BILLOW_QUALITY = NoiseGen.QUALITY_STD;
-Billow.DEFAULT_BILLOW_OCTAVE_COUNT = 6;
-Billow.DEFAULT_BILLOW_PERSISTENCE = 0.5;
-Billow.DEFAULT_BILLOW_SEED = 0;
-Billow.BILLOW_MAX_OCTAVE = 30;
+Billow.DEFAULT_BILLOW_FREQUENCY     = 1.0;
+Billow.DEFAULT_BILLOW_LACUNARITY    = 2.0;
+Billow.DEFAULT_BILLOW_QUALITY       = NoiseGen.QUALITY_STD;
+Billow.DEFAULT_BILLOW_OCTAVE_COUNT  = 6;
+Billow.DEFAULT_BILLOW_PERSISTENCE   = 0.5;
+Billow.DEFAULT_BILLOW_SEED          = 0;
+Billow.BILLOW_MAX_OCTAVE            = 30;
 
 Billow.prototype.getValue = function(x, y, z) {
 

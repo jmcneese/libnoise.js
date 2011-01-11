@@ -1,4 +1,4 @@
-module.exports = {
+var Misc = {
 
 	clampValue: function(value, lowerBound, upperBound) {
 
@@ -32,3 +32,5 @@ module.exports = {
     }
 
 };
+
+module.exports = Misc;

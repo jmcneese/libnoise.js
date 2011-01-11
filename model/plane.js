@@ -1,18 +1,18 @@
-var Plane = function(module) {
+var Plane = function(sourceModule) {
 
-	this.module = module || null;
+	this.sourceModule = sourceModule || null;
 
 };
 
 Plane.prototype.getValue = function(x, y) {
 
-	if(!this.module) {
+	if(!this.sourceModule) {
 
 		throw new Error('Invalid or missing module!');
 
 	}
 
-	return this.module.getValue(x, 0, y);
+	return this.sourceModule.getValue(x, 0, y);
 
 };
 

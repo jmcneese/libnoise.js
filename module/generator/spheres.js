@@ -1,6 +1,6 @@
-var Spheres = function(f) {
+var Spheres = function(frequency) {
 
-	this.frequency = f || Spheres.DEFAULT_SPHERES_FREQUENCY;
+	this.frequency = frequency || Spheres.DEFAULT_SPHERES_FREQUENCY;
 };
 
 Spheres.DEFAULT_SPHERES_FREQUENCY = 1.0;

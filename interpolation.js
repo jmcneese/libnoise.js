@@ -1,5 +1,4 @@
-// ported from libnoise
-module.exports = {
+var Interpolation = {
 
 	/// Performs cubic interpolation between two values bound between two other
 	/// values.
@@ -76,3 +75,5 @@ module.exports = {
 	}
 
 };
+
+module.exports = Interpolation;

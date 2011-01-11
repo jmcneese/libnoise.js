@@ -1,51 +1,80 @@
-var Clamp = function(sourceModule, lower, upper) {
+var Clamp = function(sourceModule, lowerBound, upperBound) {
 
-	if (lower && upper && lower > upper) {
+	this.sourceModule   = sourceModule  || null;
+	this.lowerBound     = lowerBound    || null;
+	this.upperBound     = upperBound    || null;
 
-		throw new Error('Lower bound cannot exceed upper bound!');
-
-	}
-
-	this.lowerBound     = lower || null;
-	this.upperBound     = upper || null;
-	this.sourceModule   = sourceModule || null;
 
 };
 
-Clamp.prototype.setBounds = function(lower, upper) {
+Clamp.prototype = {
 
-	if (lower > upper) {
+	get lowerBound() {
 
-		throw new Error('Lower bound cannot exceed upper bound!');
+		return this._lowerBound;
+
+	},
+
+	set lowerBound(v) {
+
+		if (v > this.upperBound) {
+
+			throw new Error('Lower bound cannot exceed upper bound!');
+
+		}
+
+		this._lowerBound = v;
+
+	},
+
+	get upperBound() {
+
+		return this._upperBound;
+
+	},
+
+	set upperBound(v) {
+
+		if (v < this.lowerBound) {
+
+			throw new Error('Upper bound cannot be less than lower bound!');
+
+		}
+
+		this._upperBound = v;
+
+	},
+
+	getValue: function(x, y, z) {
+
+		if (!this.sourceModule) {
+
+			throw new Error('Invalid or missing source module!');
+
+		}
+
+		var value = this.sourceModule.getValue(x, y, z);
+
+		if (value < this.lowerBound) {
+
+			return this.lowerBound;
+
+		} else if (value > this.upperBound) {
+
+			return this.upperBound;
+
+		}
+
+		return value;
+
+	},
+
+	setBounds: function(lowerBound, upperBound) {
+
+		this.upperBound = upperBound;
+		this.lowerBound = lowerBound;
 
 	}
-
-	this.upperBound = upper;
-	this.lowerBound = lower;
-
-};
-
-Clamp.prototype.getValue = function(x, y, z) {
-
-	if (!this.sourceModule) {
-
-		throw new Error('Invalid or missing source module!');
-
-	}
-
-	var value = this.sourceModule.getValue(x, y, z);
-
-	if (value < this.lowerBound) {
-
-		return this.lowerBound;
-
-	} else if (value > this.upperBound) {
-
-		return this.upperBound;
-
-	}
-
-	return value;
 
 };
 

@@ -1,14 +1,14 @@
 var MathConsts = require('../mathconsts');
 
-var Cylinder = function(module) {
+var Cylinder = function(sourceModule) {
 
-	this.module = module || null;
+	this.sourceModule = sourceModule || null;
 
 };
 
 Cylinder.prototype.getValue = function(angle, y) {
 
-	if(!this.module) {
+	if(!this.sourceModule) {
 
 		throw new Error('Invalid or missing module!');
 
@@ -16,7 +16,7 @@ Cylinder.prototype.getValue = function(angle, y) {
 
 	var i = parseFloat(angle) * MathConsts.DEG_TO_RAD;
 
-	return this.module.getValue(Math.cos(i), y, Math.sin(i));
+	return this.sourceModule.getValue(Math.cos(i), y, Math.sin(i));
 
 };
 
