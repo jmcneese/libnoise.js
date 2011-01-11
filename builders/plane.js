@@ -99,7 +99,7 @@ NoiseMapBuilderPlane.prototype = {
 
 		}
 
-		// Create the cylinder model.
+		// Create the plane model.
 		var plane   = new Plane(this.sourceModule);
 		var xExtent = this.upperXBound - this.lowerXBound;
 		var yExtent = this.upperYBound - this.lowerYBound;
@@ -156,9 +156,9 @@ NoiseMapBuilderPlane.prototype = {
 	setBounds: function(lowerXBound, lowerYBound, upperXBound, upperYBound) {
 
 		this.lowerXBound    = lowerXBound;
-		this.lowerYBound   = lowerYBound;
+		this.lowerYBound    = lowerYBound;
 		this.upperXBound    = upperXBound;
-		this.upperYBound   = upperYBound;
+		this.upperYBound    = upperYBound;
 
 	}
 
