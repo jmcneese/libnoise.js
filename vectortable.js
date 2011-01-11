@@ -257,4 +257,12 @@ var VectorTable = [
      0.0337884, -0.979891,  -0.196654,  0.0
 ];
 
-module.exports = VectorTable;
+if(module) {
+
+	module.exports = VectorTable;
+
+} else {
+
+	exports = VectorTable;
+
+}

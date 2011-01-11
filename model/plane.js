@@ -16,4 +16,12 @@ Plane.prototype.getValue = function(x, y) {
 
 };
 
-module.exports = Plane;
+if(module) {
+
+	module.exports = Plane;
+
+} else {
+
+	exports = Plane;
+
+}

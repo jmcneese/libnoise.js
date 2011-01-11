@@ -29,4 +29,12 @@ Line.prototype.getValue = function(p) {
 
 };
 
-module.exports = Line;
+if(module) {
+
+	module.exports = Line;
+
+} else {
+
+	exports = Line;
+
+}

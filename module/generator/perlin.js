@@ -54,4 +54,12 @@ Perlin.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Perlin;
+if(module) {
+
+	module.exports = Perlin;
+
+} else {
+
+	exports = Perlin;
+
+}

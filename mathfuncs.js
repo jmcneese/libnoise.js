@@ -51,4 +51,12 @@ var MathFuncs = {
 
 };
 
-module.exports = MathFuncs;
+if(module) {
+
+	module.exports = MathFuncs;
+
+} else {
+
+	exports = MathFuncs;
+
+}

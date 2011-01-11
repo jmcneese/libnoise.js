@@ -23,4 +23,12 @@ Sphere.prototype.getValue = function(lat, lon) {
 
 };
 
-module.exports = Sphere;
+if(module) {
+
+	module.exports = Sphere;
+
+} else {
+
+	exports = Sphere;
+
+}

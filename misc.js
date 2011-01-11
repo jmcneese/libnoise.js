@@ -33,4 +33,12 @@ var Misc = {
 
 };
 
-module.exports = Misc;
+if(module) {
+
+	module.exports = Misc;
+
+} else {
+
+	exports = Misc;
+
+}

@@ -76,4 +76,12 @@ var Interpolation = {
 
 };
 
-module.exports = Interpolation;
+if(module) {
+
+	module.exports = Interpolation;
+
+} else {
+
+	exports = Interpolation;
+
+}

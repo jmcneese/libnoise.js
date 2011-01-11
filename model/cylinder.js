@@ -20,4 +20,12 @@ Cylinder.prototype.getValue = function(angle, y) {
 
 };
 
-module.exports = Cylinder;
+if(module) {
+
+	module.exports = Cylinder;
+
+} else {
+
+	exports = Cylinder;
+
+}

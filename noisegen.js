@@ -247,4 +247,12 @@ var	NoiseGen = {
 
 };
 
-module.exports = NoiseGen;
+if(module) {
+
+	module.exports = NoiseGen;
+
+} else {
+
+	exports = NoiseGen;
+
+}
