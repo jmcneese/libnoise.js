@@ -1,5 +1,3 @@
-var NoiseGen = require('../../noisegen');
-var MathFuncs = require('../../mathfuncs');
 var Billow = function(frequency, lacunarity, octaves, persist, seed, quality) {
 
 	this.frequency  = frequency     || Billow.DEFAULT_BILLOW_FREQUENCY;
@@ -13,7 +11,6 @@ var Billow = function(frequency, lacunarity, octaves, persist, seed, quality) {
 
 Billow.DEFAULT_BILLOW_FREQUENCY     = 1.0;
 Billow.DEFAULT_BILLOW_LACUNARITY    = 2.0;
-Billow.DEFAULT_BILLOW_QUALITY       = NoiseGen.QUALITY_STD;
 Billow.DEFAULT_BILLOW_OCTAVE_COUNT  = 6;
 Billow.DEFAULT_BILLOW_PERSISTENCE   = 0.5;
 Billow.DEFAULT_BILLOW_SEED          = 0;
@@ -54,4 +51,15 @@ Billow.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Billow;
+if(module) {
+
+	var NoiseGen    = require('../../noisegen');
+	var MathFuncs   = require('../../mathfuncs');
+
+	module.exports  = Billow;
+
+} else {
+
+	require(['noisegen', 'mathfuncs']);
+
+}

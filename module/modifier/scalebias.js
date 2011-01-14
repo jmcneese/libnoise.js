@@ -1,7 +1,9 @@
-var ScaleBias = function(b, s) {
+var ScaleBias = function(sourceModule, scale, bias) {
 
-	this.bias   = b || ScaleBias.DEFAULT_BIAS;
-	this.scale  = s || ScaleBias.DEFAULT_SCALE;
+	this.sourceModule   = sourceModule  || null;
+	this.scale          = scale         || ScaleBias.DEFAULT_SCALE;
+	this.bias           = bias          || ScaleBias.DEFAULT_BIAS;
+
 };
 
 ScaleBias.DEFAULT_BIAS  = 0.0;
@@ -19,4 +21,8 @@ ScaleBias.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = ScaleBias;
+if(module) {
+
+	module.exports = ScaleBias;
+
+}

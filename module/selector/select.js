@@ -1,4 +1,3 @@
-var Interpolation = require('../../interpolation');
 var Select = function(sourceModules, controlModule, edge, lowerBound, upperBound) {
 
 	this.sourceModules  = sourceModules || [];
@@ -9,14 +8,9 @@ var Select = function(sourceModules, controlModule, edge, lowerBound, upperBound
 
 };
 
-/// Default edge-falloff value
-Select.DEFAULT_SELECT_EDGE_FALLOFF = 0.0;
-
-/// Default lower bound of the selection range
-Select.DEFAULT_SELECT_LOWER_BOUND = -1.0;
-
-/// Default upper bound of the selection range
-Select.DEFAULT_SELECT_UPPER_BOUND = 1.0;
+Select.DEFAULT_SELECT_EDGE_FALLOFF  = 0.0;
+Select.DEFAULT_SELECT_LOWER_BOUND   = -1.0;
+Select.DEFAULT_SELECT_UPPER_BOUND   = 1.0;
 
 Select.prototype = {
 
@@ -157,4 +151,14 @@ Select.prototype = {
 
 };
 
-module.exports = Select;
+if(module) {
+
+	var Interpolation   = require('../../interpolation');
+
+	module.exports      = Select;
+
+} else {
+
+	require('interpolation');
+
+}

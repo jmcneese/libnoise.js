@@ -80,8 +80,4 @@ if(module) {
 
 	module.exports = Interpolation;
 
-} else {
-
-	exports = Interpolation;
-
 }

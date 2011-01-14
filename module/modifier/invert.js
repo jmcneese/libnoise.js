@@ -16,4 +16,8 @@ Invert.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Invert;
+if(module) {
+
+	module.exports = Invert;
+
+}

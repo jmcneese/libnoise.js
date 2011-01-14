@@ -7,13 +7,8 @@ var ScalePoint = function(sourceModule, xScale, yScale, zScale) {
 
 };
 
-/// Default x rotation
 ScalePoint.DEFAULT_SCALE_POINT_X = 1.0;
-
-/// Default y rotation
 ScalePoint.DEFAULT_SCALE_POINT_Y = 1.0;
-
-/// Default z rotation
 ScalePoint.DEFAULT_SCALE_POINT_Z = 1.0;
 
 ScalePoint.prototype.setScales = function(xScale, yScale, zScale) {
@@ -43,4 +38,8 @@ ScalePoint.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = ScalePoint;
+if(module) {
+
+	module.exports = ScalePoint;
+
+}

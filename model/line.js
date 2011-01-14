@@ -33,8 +33,4 @@ if(module) {
 
 	module.exports = Line;
 
-} else {
-
-	exports = Line;
-
 }

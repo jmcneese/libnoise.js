@@ -1,5 +1,3 @@
-var Interpolation = require('../../interpolation');
-
 var Blend = function(sourceModules, controlModule) {
 
 	this.sourceModules = sourceModules || [];
@@ -33,4 +31,14 @@ Blend.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Blend;
+if(module) {
+
+	var Interpolation   = require('../../interpolation');
+
+	module.exports      = Blend;
+
+} else {
+
+	require('interpolation');
+
+}

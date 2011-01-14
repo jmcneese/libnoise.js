@@ -17,4 +17,8 @@ Add.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Add;
+if(module) {
+
+	module.exports = Add;
+
+}

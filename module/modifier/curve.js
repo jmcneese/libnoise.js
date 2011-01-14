@@ -1,5 +1,3 @@
-var Misc = require('../../misc');
-var Interpolation = require('../../interpolation');
 var Curve = function(sourceModule, controlPoints) {
 
 	this.sourceModule   = sourceModule || null;
@@ -141,4 +139,15 @@ Curve.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Curve;
+if(module) {
+
+	var Misc            = require('../../misc');
+	var Interpolation   = require('../../interpolation');
+
+	module.exports      = Curve;
+
+} else {
+
+	require(['misc', 'interpolation']);
+
+}

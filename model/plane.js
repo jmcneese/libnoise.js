@@ -20,8 +20,4 @@ if(module) {
 
 	module.exports = Plane;
 
-} else {
-
-	exports = Plane;
-
 }

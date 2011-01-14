@@ -1,5 +1,3 @@
-var MathConsts = require('../mathconsts');
-
 var Cylinder = function(sourceModule) {
 
 	this.sourceModule = sourceModule || null;
@@ -22,10 +20,12 @@ Cylinder.prototype.getValue = function(angle, y) {
 
 if(module) {
 
+	var MathConsts = require('../mathconsts');
+
 	module.exports = Cylinder;
 
 } else {
 
-	exports = Cylinder;
+	require('mathconsts');
 
 }

@@ -12,4 +12,8 @@ Const.prototype.getValue = function() {
 
 };
 
-module.exports = Const;
+if(module) {
+
+	module.exports = Const;
+
+}

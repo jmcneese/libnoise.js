@@ -261,8 +261,4 @@ if(module) {
 
 	module.exports = VectorTable;
 
-} else {
-
-	exports = VectorTable;
-
 }

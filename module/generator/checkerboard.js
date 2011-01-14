@@ -1,4 +1,3 @@
-var MathFuncs = require('../../mathfuncs');
 var Checkerboard = function() {};
 
 Checkerboard.prototype.getValue = function(x, y, z) {
@@ -11,4 +10,14 @@ Checkerboard.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Checkerboard;
+if(module) {
+
+	var MathFuncs   = require('../../mathfuncs');
+
+	module.exports  = Checkerboard;
+
+} else {
+
+	require('mathfuncs');
+
+}

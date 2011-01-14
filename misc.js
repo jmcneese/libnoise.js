@@ -37,8 +37,4 @@ if(module) {
 
 	module.exports = Misc;
 
-} else {
-
-	exports = Misc;
-
 }

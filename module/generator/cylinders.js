@@ -21,4 +21,8 @@ Cylinders.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Cylinders;
+if(module) {
+
+	module.exports = Cylinders;
+
+}

@@ -29,4 +29,8 @@ Displace.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Displace;
+if(module) {
+
+	module.exports = Displace;
+
+}

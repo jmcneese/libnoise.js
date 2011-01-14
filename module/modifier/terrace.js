@@ -1,5 +1,3 @@
-var Misc = require('../../misc');
-var Interpolation = require('../../interpolation');
 var Terrace = function(sourceModule, controlPoints, invert) {
 
 	this.sourceModule   = sourceModule  || null;
@@ -36,8 +34,8 @@ Terrace.prototype.findInsertionPos = function(value) {
 
 Terrace.prototype.insertAtPos = function (insertionPos, value) {
 
-	insertionPos = parseInt(insertionPos);
-	value = parseFloat(value);
+	insertionPos    = parseInt(insertionPos);
+	value           = parseFloat(value);
 
 	// Make room for the new control point at the specified position within
 	// the control point array.  The position is determined by the value of
@@ -139,4 +137,15 @@ Terrace.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Terrace;
+if(module) {
+
+	var Misc            = require('../../misc');
+	var Interpolation   = require('../../interpolation');
+
+	module.exports      = Terrace;
+
+} else {
+
+	require(['misc', 'interpolation']);
+
+}

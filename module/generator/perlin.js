@@ -1,5 +1,3 @@
-var NoiseGen = require('../../noisegen');
-var MathFuncs = require('../../mathfuncs');
 var Perlin = function(frequency, lacunarity, octaves, persist, seed, quality) {
 
 	this.frequency  = frequency     || Perlin.DEFAULT_PERLIN_FREQUENCY;
@@ -13,7 +11,6 @@ var Perlin = function(frequency, lacunarity, octaves, persist, seed, quality) {
 
 Perlin.DEFAULT_PERLIN_FREQUENCY     = 1.0;
 Perlin.DEFAULT_PERLIN_LACUNARITY    = 2.0;
-Perlin.DEFAULT_PERLIN_QUALITY       = NoiseGen.QUALITY_STD;
 Perlin.DEFAULT_PERLIN_OCTAVE_COUNT  = 6;
 Perlin.DEFAULT_PERLIN_PERSISTENCE   = 0.5;
 Perlin.DEFAULT_PERLIN_SEED          = 0;
@@ -56,10 +53,13 @@ Perlin.prototype.getValue = function(x, y, z) {
 
 if(module) {
 
+	var NoiseGen = require('../../noisegen');
+	var MathFuncs = require('../../mathfuncs');
+
 	module.exports = Perlin;
 
 } else {
 
-	exports = Perlin;
+	require(['noisegen', 'mathfuncs']);
 
 }

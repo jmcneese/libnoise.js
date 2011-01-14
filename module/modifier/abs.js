@@ -16,4 +16,8 @@ Abs.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Abs;
+if(module) {
+
+	module.exports = Abs;
+
+}

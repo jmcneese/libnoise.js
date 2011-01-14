@@ -53,19 +53,7 @@ Clamp.prototype = {
 
 		}
 
-		var value = this.sourceModule.getValue(x, y, z);
-
-		if (value < this.lowerBound) {
-
-			return this.lowerBound;
-
-		} else if (value > this.upperBound) {
-
-			return this.upperBound;
-
-		}
-
-		return value;
+		return Misc.clampValue(this.sourceModule.getValue(x, y, z), this.lowerBound, this.upperBound);
 
 	},
 
@@ -78,4 +66,14 @@ Clamp.prototype = {
 
 };
 
-module.exports = Clamp;
+if(module) {
+
+	var Misc = require('../../misc');
+
+	module.exports = Clamp;
+
+} else {
+
+	require('misc');
+
+}

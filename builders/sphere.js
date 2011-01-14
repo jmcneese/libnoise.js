@@ -1,5 +1,3 @@
-var NoiseMap = require('../noisemap');
-var Sphere = require('../model/sphere');
 var NoiseMapBuilderSphere = function(sourceModule, width, height) {
 
 	this.sourceModule   = sourceModule  || null;
@@ -138,10 +136,13 @@ NoiseMapBuilderSphere.prototype = {
 
 if (module) {
 
-	module.exports = NoiseMapBuilderSphere;
+	var NoiseMap    = require('../noisemap');
+	var Sphere      = require('../model/sphere');
+
+	module.exports  = NoiseMapBuilderSphere;
 
 } else {
 
-	exports = NoiseMapBuilderSphere;
+	require(['noisemap', 'model/sphere']);
 
 }

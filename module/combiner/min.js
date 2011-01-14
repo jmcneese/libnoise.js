@@ -19,4 +19,8 @@ Min.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Min;
+if(module) {
+
+	module.exports = Min;
+
+}

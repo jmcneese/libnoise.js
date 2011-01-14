@@ -1,6 +1,3 @@
-var NoiseGen = require('../../noisegen');
-var MathFuncs = require('../../mathfuncs');
-var Misc = require('../../misc');
 var RidgedMulti = function(frequency, lacunarity, octaves, seed, quality, offset, gain) {
 
 	this.frequency  = frequency     || RidgedMulti.DEFAULT_RIDGED_FREQUENCY;
@@ -16,7 +13,6 @@ var RidgedMulti = function(frequency, lacunarity, octaves, seed, quality, offset
 
 RidgedMulti.DEFAULT_RIDGED_FREQUENCY    = 1.0;
 RidgedMulti.DEFAULT_RIDGED_LACUNARITY   = 2.0;
-RidgedMulti.DEFAULT_RIDGED_QUALITY      = NoiseGen.QUALITY_STD;
 RidgedMulti.DEFAULT_RIDGED_OCTAVE_COUNT = 6;
 RidgedMulti.DEFAULT_RIDGED_SEED         = 0;
 RidgedMulti.DEFAULT_RIDGED_OFFSET       = 1.0;
@@ -37,6 +33,8 @@ RidgedMulti.prototype = {
 
 		var h           = 1.0;
 		var frequency   = 1.0;
+
+		this.weights    = [];
 
 		for (var i = 0; i < RidgedMulti.RIDGED_MAX_OCTAVE; i++) {
 
@@ -106,4 +104,17 @@ RidgedMulti.prototype = {
 
 };
 
-module.exports = RidgedMulti;
+if(module) {
+
+	var NoiseGen = require('../../noisegen');
+	var MathFuncs = require('../../mathfuncs');
+	var Misc = require('../../misc');
+
+	module.exports = RidgedMulti;
+
+} else {
+
+	require(['noisegen', 'mathfuncs', 'misc']);
+
+}
+

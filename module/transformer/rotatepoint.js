@@ -1,4 +1,3 @@
-var MathConsts = require('../../mathconsts');
 var RotatePoint = function(sourceModule, xAngle, yAngle, zAngle) {
 
 	this.x1matrix       = null;
@@ -19,13 +18,8 @@ var RotatePoint = function(sourceModule, xAngle, yAngle, zAngle) {
 
 };
 
-/// Default x rotation
 RotatePoint.DEFAULT_ROTATE_X = 0.0;
-
-/// Default y rotation
 RotatePoint.DEFAULT_ROTATE_Y = 0.0;
-
-/// Default z rotation
 RotatePoint.DEFAULT_ROTATE_Z = 0.0;
 
 RotatePoint.prototype = {
@@ -118,5 +112,14 @@ RotatePoint.prototype = {
 
 };
 
+if(module) {
 
-module.exports = RotatePoint;
+	var MathConsts = require('../../mathconsts');
+
+	module.exports = RotatePoint;
+
+} else {
+
+	require('mathconsts');
+
+}

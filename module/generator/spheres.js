@@ -3,7 +3,7 @@ var Spheres = function(frequency) {
 	this.frequency = frequency || Spheres.DEFAULT_SPHERES_FREQUENCY;
 };
 
-Spheres.DEFAULT_SPHERES_FREQUENCY = 1.0;
+Spheres.DEFAULT_SPHERES_FREQUENCY = 4.0;
 
 Spheres.prototype.getValue = function(x, y, z) {
 
@@ -20,4 +20,8 @@ Spheres.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Spheres;
+if(module) {
+
+	module.exports = Spheres;
+
+}

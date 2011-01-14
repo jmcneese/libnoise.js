@@ -19,4 +19,8 @@ Max.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Max;
+if(module) {
+
+	module.exports = Max;
+
+}

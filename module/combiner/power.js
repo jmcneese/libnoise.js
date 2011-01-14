@@ -19,4 +19,8 @@ Power.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Power;
+if(module) {
+
+	module.exports = Power;
+
+}

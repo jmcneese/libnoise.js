@@ -1,4 +1,3 @@
-var MathConsts = require('../mathconsts');
 var Sphere = function(sourceModule) {
 
 	this.sourceModule = sourceModule || null;
@@ -25,10 +24,12 @@ Sphere.prototype.getValue = function(lat, lon) {
 
 if(module) {
 
+	var MathConsts = require('../mathconsts');
+
 	module.exports = Sphere;
 
 } else {
 
-	exports = Sphere;
+	require('mathconsts');
 
 }

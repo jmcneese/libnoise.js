@@ -1,5 +1,3 @@
-var NoiseMap = require('../noisemap');
-var Cylinder = require('../model/cylinder');
 var NoiseMapBuilderCylinder = function(sourceModule, width, height) {
 
 	this.sourceModule       = sourceModule  || null;
@@ -138,10 +136,13 @@ NoiseMapBuilderCylinder.prototype = {
 
 if (module) {
 
-	module.exports = NoiseMapBuilderCylinder;
+	var NoiseMap    = require('../noisemap');
+	var Cylinder    = require('../model/cylinder');
+
+	module.exports  = NoiseMapBuilderCylinder;
 
 } else {
 
-	exports = NoiseMapBuilderCylinder;
+	require(['noisemap', 'model/cylinder']);
 
 }

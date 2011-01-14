@@ -1,12 +1,9 @@
-var Interpoliation = require('../interpolation');
-var NoiseMap = require('../noisemap');
-var Plane = require('../model/plane');
 var NoiseMapBuilderPlane = function(sourceModule, width, height, seamless) {
 
 	this.sourceModule   = sourceModule  || null;
 	this.width          = width         || 256;
 	this.height         = height        || 256;
-	this.seamless       = seamless      || null;
+	this.seamless       = seamless      || false;
 
 	this.lowerXBound    = 0.0;
 	this.lowerYBound    = 0.0;
@@ -27,12 +24,6 @@ NoiseMapBuilderPlane.prototype = {
 
 	set lowerXBound(v) {
 
-		if (v >= this.upperXBound) {
-
-			throw new Error('Lower bound cannot equal or exceed upper bound!');
-
-		}
-
 		this._lowerXBound = v;
 
 	},
@@ -44,12 +35,6 @@ NoiseMapBuilderPlane.prototype = {
 	},
 
 	set lowerYBound(v) {
-
-		if (v >= this.upperYBound) {
-
-			throw new Error('Lower bound cannot equal or exceed upper bound!');
-
-		}
 
 		this._lowerYBound = v;
 
@@ -63,12 +48,6 @@ NoiseMapBuilderPlane.prototype = {
 
 	set upperXBound(v) {
 
-		if (v <= this.upperXBound) {
-
-			throw new Error('Upper bound cannot equal or exceed upper bound!');
-
-		}
-
 		this._upperXBound = v;
 
 	},
@@ -81,17 +60,20 @@ NoiseMapBuilderPlane.prototype = {
 
 	set upperYBound(v) {
 
-		if (v <= this.upperYBound) {
-
-			throw new Error('Upper bound cannot equal or exceed upper bound!');
-
-		}
-
 		this._upperYBound = v;
 
 	},
 
 	build: function() {
+
+		var xExtent = this.upperXBound - this.lowerXBound;
+		var yExtent = this.upperYBound - this.lowerYBound;
+
+		if (xExtent < 0 || yExtent < 0) {
+
+			throw new Error('Invalid bounds!');
+
+		}
 
 		if (!this.sourceModule) {
 
@@ -101,8 +83,6 @@ NoiseMapBuilderPlane.prototype = {
 
 		// Create the plane model.
 		var plane   = new Plane(this.sourceModule);
-		var xExtent = this.upperXBound - this.lowerXBound;
-		var yExtent = this.upperYBound - this.lowerYBound;
 		var xDelta  = xExtent / this.width;
 		var yDelta  = yExtent / this.height;
 		var curX    = this.lowerXBound;
@@ -118,7 +98,7 @@ NoiseMapBuilderPlane.prototype = {
 
 				if(!this.seamless) {
 
-					value = plane.getValue(x, y);
+					value = plane.getValue(curX, curY);
 
 				} else {
 
@@ -155,10 +135,10 @@ NoiseMapBuilderPlane.prototype = {
 
 	setBounds: function(lowerXBound, lowerYBound, upperXBound, upperYBound) {
 
-		this.lowerXBound    = lowerXBound;
-		this.lowerYBound    = lowerYBound;
 		this.upperXBound    = upperXBound;
 		this.upperYBound    = upperYBound;
+		this.lowerXBound    = lowerXBound;
+		this.lowerYBound    = lowerYBound;
 
 	}
 
@@ -166,10 +146,14 @@ NoiseMapBuilderPlane.prototype = {
 
 if (module) {
 
-	module.exports = NoiseMapBuilderPlane;
+	var Interpoliation  = require('../interpolation');
+	var NoiseMap        = require('../noisemap');
+	var Plane           = require('../model/plane');
+
+	module.exports      = NoiseMapBuilderPlane;
 
 } else {
 
-	exports = NoiseMapBuilderPlane;
+	require(['interpolation', 'noisemap', 'model/plane']);
 
 }

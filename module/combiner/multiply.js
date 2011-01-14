@@ -16,4 +16,8 @@ Multiply.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Multiply;
+if(module) {
+
+	module.exports = Multiply;
+
+}

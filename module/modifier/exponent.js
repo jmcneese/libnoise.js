@@ -17,4 +17,8 @@ Exponent.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = Exponent;
+if(module) {
+
+	module.exports = Exponent;
+
+}

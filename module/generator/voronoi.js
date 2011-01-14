@@ -1,6 +1,3 @@
-var MathConsts = require('../../mathconsts');
-var NoiseGen = require('../../noisegen');
-
 var Voronoi = function(frequency, displacement, distance, seed) {
 
 	this.frequency      = frequency     || Voronoi.DEFAULT_VORONOI_FREQUENCY;
@@ -10,9 +7,9 @@ var Voronoi = function(frequency, displacement, distance, seed) {
 
 };
 
-Voronoi.DEFAULT_VORONOI_DISPLACEMENT = 1.0;
-Voronoi.DEFAULT_VORONOI_FREQUENCY = 1.0;
-Voronoi.DEFAULT_VORONOI_SEED = 0;
+Voronoi.DEFAULT_VORONOI_DISPLACEMENT    = 1.0;
+Voronoi.DEFAULT_VORONOI_FREQUENCY       = 1.0;
+Voronoi.DEFAULT_VORONOI_SEED            = 0;
 
 Voronoi.prototype.getValue = function(x, y, z) {
 
@@ -87,9 +84,20 @@ Voronoi.prototype.getValue = function(x, y, z) {
 			parseInt(Math.floor(xCandidate)),
 			parseInt(Math.floor(yCandidate)),
 			parseInt(Math.floor(zCandidate))
-			)
-		);
+		)
+	);
 
 };
 
-module.exports = Voronoi;
+if(module) {
+
+	var MathConsts  = require('../../mathconsts');
+	var NoiseGen    = require('../../noisegen');
+
+	module.exports  = Voronoi;
+
+} else {
+
+	require(['noisegen', 'mathconsts']);
+
+}

@@ -10,8 +10,4 @@ if(module) {
 
 	module.exports = MathConsts;
 
-} else {
-
-	exports = MathConsts;
-
 }

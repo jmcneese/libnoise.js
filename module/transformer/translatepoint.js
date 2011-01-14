@@ -31,4 +31,8 @@ TranslatePoint.prototype.getValue = function(x, y, z) {
 
 };
 
-module.exports = TranslatePoint;
+if(module) {
+
+	module.exports = TranslatePoint;
+
+}
