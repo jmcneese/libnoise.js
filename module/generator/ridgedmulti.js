@@ -7,7 +7,6 @@ var RidgedMulti = function(frequency, lacunarity, octaves, seed, quality, offset
 	this.quality    = quality       || NoiseGen.QUALITY_STD;
 	this.offset     = offset        || RidgedMulti.DEFAULT_RIDGED_OFFSET;
 	this.gain       = gain          || RidgedMulti.DEFAULT_RIDGED_GAIN;
-	this.weights    = [];
 
 };
 
