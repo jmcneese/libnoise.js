@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/andyburke/libnoise.js"
   },
-  "files": [ "." ],
+  "files": [ "*" ],
   "dependencies": {
   },
   "devDependencies": {
