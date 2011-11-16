@@ -82,7 +82,7 @@ NoiseMap.prototype = {
 };
 
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	module.exports = NoiseMap;
 

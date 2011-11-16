@@ -22,7 +22,7 @@ Sphere.prototype.getValue = function(lat, lon) {
 
 };
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	var MathConsts = require('../mathconsts');
 

@@ -95,7 +95,7 @@ Turbulence.prototype = {
 
 };
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	var Perlin = require('../generator/perlin');
 

@@ -76,8 +76,10 @@ var Interpolation = {
 
 };
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	module.exports = Interpolation;
 
 }
+
+exports.Interpolation = Interpolation;

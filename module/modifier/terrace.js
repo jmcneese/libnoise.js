@@ -137,7 +137,7 @@ Terrace.prototype.getValue = function(x, y, z) {
 
 };
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	var Misc            = require('../../misc');
 	var Interpolation   = require('../../interpolation');

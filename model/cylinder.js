@@ -18,7 +18,7 @@ Cylinder.prototype.getValue = function(angle, y) {
 
 };
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	var MathConsts = require('../mathconsts');
 

@@ -29,7 +29,7 @@ Line.prototype.getValue = function(p) {
 
 };
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	module.exports = Line;
 

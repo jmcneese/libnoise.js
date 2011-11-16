@@ -151,7 +151,7 @@ Select.prototype = {
 
 };
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	var Interpolation   = require('../../interpolation');
 

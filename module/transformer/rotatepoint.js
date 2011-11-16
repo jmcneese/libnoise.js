@@ -112,7 +112,7 @@ RotatePoint.prototype = {
 
 };
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	var MathConsts = require('../../mathconsts');
 
