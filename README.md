@@ -2,9 +2,10 @@
 
 A (mostly) direct port of C++ [libnoise](http://libnoise.sourceforge.net/index.html) for CommonJS/Node.js
 
-Examples:
+Examples
+---
 
-== Perlin Noise ==
+### Perlin Noise
 
     var Perlin = require( 'libnoise.js/module/generator/perlin' );
     var perlin = new Perlin(); 
