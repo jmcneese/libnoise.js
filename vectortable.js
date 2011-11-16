@@ -262,5 +262,3 @@ if ( typeof( module ) != 'undefined' ) {
 	module.exports = VectorTable;
 
 }
-
-exports.VectorTable = VectorTable;

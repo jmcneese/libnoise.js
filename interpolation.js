@@ -81,5 +81,3 @@ if ( typeof( module ) != 'undefined' ) {
 	module.exports = Interpolation;
 
 }
-
-exports.Interpolation = Interpolation;

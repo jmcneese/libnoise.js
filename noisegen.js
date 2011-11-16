@@ -1,6 +1,3 @@
-var Interpolation   = require('./interpolation').Interpolation;
-var VectorTable     = require('./vectortable').VectorTable;
-
 var	NoiseGen = {
 
 	// consts
@@ -250,8 +247,14 @@ var	NoiseGen = {
 
 if( typeof( module ) != 'undefined' ) {
 
+	var Interpolation   = require('./interpolation');
+	var VectorTable     = require('./vectortable');
+
 	module.exports      = NoiseGen;
 
+} else {
+
+	require(['interpolation', 'vectortable']);
+	
 }
 
-exports.NoiseGen = NoiseGen;
