@@ -245,7 +245,7 @@ var	NoiseGen = {
 
 };
 
-if(module) {
+if( typeof( module ) != 'undefined' ) {
 
 	var Interpolation   = require('./interpolation');
 	var VectorTable     = require('./vectortable');
@@ -255,5 +255,6 @@ if(module) {
 } else {
 
 	require(['interpolation', 'vectortable']);
-
+	
 }
+

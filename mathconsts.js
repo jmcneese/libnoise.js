@@ -6,7 +6,7 @@ var MathConsts = {
 	RAD_TO_DEG:  1.0 / (Math.PI / 180.0)
 };
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	module.exports = MathConsts;
 

@@ -257,7 +257,7 @@ var VectorTable = [
      0.0337884, -0.979891,  -0.196654,  0.0
 ];
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	module.exports = VectorTable;
 

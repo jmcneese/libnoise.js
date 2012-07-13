@@ -31,7 +31,7 @@ Blend.prototype.getValue = function(x, y, z) {
 
 };
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	var Interpolation   = require('../../interpolation');
 

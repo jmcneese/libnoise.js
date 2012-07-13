@@ -20,7 +20,7 @@ var MathFuncs = {
 
 };
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	module.exports = MathFuncs;
 

@@ -66,7 +66,7 @@ Clamp.prototype = {
 
 };
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	var Misc = require('../../misc');
 

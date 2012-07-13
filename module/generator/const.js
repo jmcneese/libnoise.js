@@ -12,7 +12,7 @@ Const.prototype.getValue = function() {
 
 };
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	module.exports = Const;
 

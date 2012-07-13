@@ -16,7 +16,7 @@ Plane.prototype.getValue = function(x, y) {
 
 };
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	module.exports = Plane;
 

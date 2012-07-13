@@ -103,7 +103,7 @@ RidgedMulti.prototype = {
 
 };
 
-if(module) {
+if ( typeof( module ) != 'undefined' ) {
 
 	var NoiseGen = require('../../noisegen');
 	var MathFuncs = require('../../mathfuncs');
